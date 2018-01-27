@@ -53,6 +53,7 @@ final class OTPTextField : UITextField {
         otpLength = 4
         createALayer(xPosition: 10)
         createALayer(xPosition: 10 + layerWidth + 10)
+        keyboardType = .numberPad
     }
     
     @objc func textfieldDidChange(_ sender : NSNotification) {

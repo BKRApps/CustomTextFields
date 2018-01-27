@@ -12,7 +12,7 @@
 		F0944679201C4E220014F8A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0944677201C4E220014F8A4 /* Main.storyboard */; };
 		F094467B201C4E220014F8A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F094467A201C4E220014F8A4 /* Assets.xcassets */; };
 		F094467E201C4E220014F8A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F094467C201C4E220014F8A4 /* LaunchScreen.storyboard */; };
-		F0944686201C5B7F0014F8A4 /* LabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0944685201C5B7F0014F8A4 /* LabelTextField.swift */; };
+		F0944686201C5B7F0014F8A4 /* FloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0944685201C5B7F0014F8A4 /* FloatingLabelTextField.swift */; };
 		F0E7B72A201CA4AF006C6C22 /* OTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E7B729201CA4AF006C6C22 /* OTPTextField.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +24,7 @@
 		F094467A201C4E220014F8A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F094467D201C4E220014F8A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F094467F201C4E220014F8A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0944685201C5B7F0014F8A4 /* LabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTextField.swift; sourceTree = "<group>"; };
+		F0944685201C5B7F0014F8A4 /* FloatingLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabelTextField.swift; sourceTree = "<group>"; };
 		F0E7B729201CA4AF006C6C22 /* OTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +64,7 @@
 				F094467A201C4E220014F8A4 /* Assets.xcassets */,
 				F094467C201C4E220014F8A4 /* LaunchScreen.storyboard */,
 				F094467F201C4E220014F8A4 /* Info.plist */,
-				F0944685201C5B7F0014F8A4 /* LabelTextField.swift */,
+				F0944685201C5B7F0014F8A4 /* FloatingLabelTextField.swift */,
 				F0E7B729201CA4AF006C6C22 /* OTPTextField.swift */,
 			);
 			path = CustomTextField;
@@ -145,7 +145,7 @@
 				F0944676201C4E220014F8A4 /* ViewController.swift in Sources */,
 				F0E7B72A201CA4AF006C6C22 /* OTPTextField.swift in Sources */,
 				F0944674201C4E220014F8A4 /* AppDelegate.swift in Sources */,
-				F0944686201C5B7F0014F8A4 /* LabelTextField.swift in Sources */,
+				F0944686201C5B7F0014F8A4 /* FloatingLabelTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
