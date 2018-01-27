@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomTextField" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXQ-AV-8KA">
+                                <rect key="frame" x="25" y="45" width="325" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="VFQ-Ob-cBR"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="2gb-n7-ADs"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qp8-tI-Mgu" customClass="LabelTextField" customModule="CustomTextField" customModuleProvider="target">
+                                <rect key="frame" x="25" y="175" width="325" height="45"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IAb-Wt-sfd" customClass="OTPTextField" customModule="CustomTextField" customModuleProvider="target">
+                                <rect key="frame" x="25" y="300" width="325" height="45"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qp8-tI-Mgu" firstAttribute="height" secondItem="aXQ-AV-8KA" secondAttribute="height" id="5T6-kc-Sab"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aXQ-AV-8KA" secondAttribute="trailing" constant="25" id="FTp-ek-z6J"/>
+                            <constraint firstItem="aXQ-AV-8KA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="I8n-Eh-gsK"/>
+                            <constraint firstItem="IAb-Wt-sfd" firstAttribute="top" secondItem="Qp8-tI-Mgu" secondAttribute="bottom" constant="80" id="Ja8-wk-Pn8"/>
+                            <constraint firstItem="aXQ-AV-8KA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="K7K-nU-giC"/>
+                            <constraint firstItem="Qp8-tI-Mgu" firstAttribute="leading" secondItem="aXQ-AV-8KA" secondAttribute="leading" id="KRV-fT-0HC"/>
+                            <constraint firstItem="Qp8-tI-Mgu" firstAttribute="top" secondItem="aXQ-AV-8KA" secondAttribute="bottom" constant="85" id="M4m-Bz-1sC"/>
+                            <constraint firstItem="IAb-Wt-sfd" firstAttribute="leading" secondItem="Qp8-tI-Mgu" secondAttribute="leading" id="SBA-Oy-riI"/>
+                            <constraint firstItem="Qp8-tI-Mgu" firstAttribute="trailing" secondItem="aXQ-AV-8KA" secondAttribute="trailing" id="g8i-Qo-RX4"/>
+                            <constraint firstItem="IAb-Wt-sfd" firstAttribute="trailing" secondItem="Qp8-tI-Mgu" secondAttribute="trailing" id="gFi-O4-kd3"/>
+                            <constraint firstItem="IAb-Wt-sfd" firstAttribute="height" secondItem="Qp8-tI-Mgu" secondAttribute="height" id="yod-eR-5Od"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="lableTextField" destination="Qp8-tI-Mgu" id="keG-Kb-Fc2"/>
+                        <outlet property="simpleTextField" destination="aXQ-AV-8KA" id="aYd-7I-1W4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
