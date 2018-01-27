@@ -24,7 +24,7 @@ final class OTPTextField : UITextField {
             // find the size required for empty string.
             let attributes = [NSAttributedStringKey.font : self.font ?? UIFont.systemFont(ofSize: 15.0)]
             let spaceSize = spaceString.size(withAttributes: attributes)
-            // find the size required for number string
+            // find the size required for number string 
             let numberString = "1"
             let numberSize = numberString.size(withAttributes: attributes)
             numberSpacesRequired = Int((layerWidth-numberSize.width)/spaceSize.width)
@@ -53,6 +53,7 @@ final class OTPTextField : UITextField {
         otpLength = 4
         createALayer(xPosition: 10)
         createALayer(xPosition: 10 + layerWidth + 10)
+        keyboardType = .numberPad
     }
     
     @objc func textfieldDidChange(_ sender : NSNotification) {

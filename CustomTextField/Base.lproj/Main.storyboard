@@ -25,19 +25,28 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="2gb-n7-ADs"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qp8-tI-Mgu" customClass="LabelTextField" customModule="CustomTextField" customModuleProvider="target">
-                                <rect key="frame" x="25" y="175" width="325" height="45"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lT0-Pf-Zjh">
+                                <rect key="frame" x="25" y="161" width="325" height="45"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Om7-2F-fQs"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qp8-tI-Mgu" customClass="FloatingLabelTextField" customModule="CustomTextField" customModuleProvider="target">
+                                <rect key="frame" x="25" y="275" width="325" height="45"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IAb-Wt-sfd" customClass="OTPTextField" customModule="CustomTextField" customModuleProvider="target">
-                                <rect key="frame" x="25" y="300" width="325" height="45"/>
+                                <rect key="frame" x="25" y="400" width="325" height="45"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -51,17 +60,21 @@
                             <constraint firstItem="IAb-Wt-sfd" firstAttribute="top" secondItem="Qp8-tI-Mgu" secondAttribute="bottom" constant="80" id="Ja8-wk-Pn8"/>
                             <constraint firstItem="aXQ-AV-8KA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="K7K-nU-giC"/>
                             <constraint firstItem="Qp8-tI-Mgu" firstAttribute="leading" secondItem="aXQ-AV-8KA" secondAttribute="leading" id="KRV-fT-0HC"/>
-                            <constraint firstItem="Qp8-tI-Mgu" firstAttribute="top" secondItem="aXQ-AV-8KA" secondAttribute="bottom" constant="85" id="M4m-Bz-1sC"/>
+                            <constraint firstItem="lT0-Pf-Zjh" firstAttribute="leading" secondItem="aXQ-AV-8KA" secondAttribute="leading" id="O7M-wg-6Bf"/>
                             <constraint firstItem="IAb-Wt-sfd" firstAttribute="leading" secondItem="Qp8-tI-Mgu" secondAttribute="leading" id="SBA-Oy-riI"/>
+                            <constraint firstItem="lT0-Pf-Zjh" firstAttribute="height" secondItem="aXQ-AV-8KA" secondAttribute="height" id="V5A-a1-D4B"/>
+                            <constraint firstItem="lT0-Pf-Zjh" firstAttribute="top" secondItem="aXQ-AV-8KA" secondAttribute="bottom" constant="71" id="chW-Wr-bPS"/>
+                            <constraint firstItem="lT0-Pf-Zjh" firstAttribute="trailing" secondItem="aXQ-AV-8KA" secondAttribute="trailing" id="dxj-hK-3p5"/>
                             <constraint firstItem="Qp8-tI-Mgu" firstAttribute="trailing" secondItem="aXQ-AV-8KA" secondAttribute="trailing" id="g8i-Qo-RX4"/>
                             <constraint firstItem="IAb-Wt-sfd" firstAttribute="trailing" secondItem="Qp8-tI-Mgu" secondAttribute="trailing" id="gFi-O4-kd3"/>
+                            <constraint firstItem="Qp8-tI-Mgu" firstAttribute="top" secondItem="lT0-Pf-Zjh" secondAttribute="bottom" constant="69" id="xex-bN-DTb"/>
                             <constraint firstItem="IAb-Wt-sfd" firstAttribute="height" secondItem="Qp8-tI-Mgu" secondAttribute="height" id="yod-eR-5Od"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="lableTextField" destination="Qp8-tI-Mgu" id="keG-Kb-Fc2"/>
-                        <outlet property="simpleTextField" destination="aXQ-AV-8KA" id="aYd-7I-1W4"/>
+                        <outlet property="creditCardTextField" destination="aXQ-AV-8KA" id="6gE-RN-1sW"/>
+                        <outlet property="showHidePasswordTF" destination="lT0-Pf-Zjh" id="Dfi-ah-CLM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

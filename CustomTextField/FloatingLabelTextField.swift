@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 @IBDesignable
-final class LabelTextField : UITextField {
+final class FloatingLabelTextField : UITextField {
     
     let placeHolderLabel : UILabel = UILabel()
     var placeHolderFont: UIFont?
@@ -19,13 +19,10 @@ final class LabelTextField : UITextField {
     
     override func draw(_ rect: CGRect) {
         let frame = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: rect.size.width, height: rect.size.height))
-        if self.subviews.contains(placeHolderLabel) {
-            //nothing
-        }else{
+        if !self.subviews.contains(placeHolderLabel) {
             placeHolderLabel.frame = frame.insetBy(dx: 0, dy: 14)
             placeHolderLabel.text = "PlaceHolder "
             placeHolderLabel.textColor = UIColor.gray
-//            placeHolderLabel.backgroundColor = UIColor.red
             placeHolderLabel.sizeToFit()
             self.placeHolderFont = placeHolderLabel.font
             placeHolderLabel.font = UIFont(name: (self.placeHolderFont?.fontName)!, size: (self.placeHolderFont?.pointSize)!*1.0)
@@ -39,18 +36,18 @@ final class LabelTextField : UITextField {
     
     override func willMove(toSuperview newSuperview: UIView?) {
         if (newSuperview != nil) {
-            NotificationCenter.default.addObserver(self, selector: #selector(beginEditing1), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: self)
-            NotificationCenter.default.addObserver(self, selector: #selector(endEditing1), name: NSNotification.Name.UITextFieldTextDidEndEditing, object: self)
+            NotificationCenter.default.addObserver(self, selector: #selector(textfieldDidBeginEditing), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: self)
+            NotificationCenter.default.addObserver(self, selector: #selector(extfieldDidEndEditing), name: NSNotification.Name.UITextFieldTextDidEndEditing, object: self)
         }
     }
     
-    @objc func beginEditing1() {
+    @objc func textfieldDidBeginEditing() {
         if text?.isEmpty ?? false {
             UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: ({
                 self.placeHolderLabel.frame.origin = CGPoint(x: 0, y: 4)
                 self.placeHolderLabel.font = UIFont(name: (self.placeHolderFont?.fontName)!, size: (self.placeHolderFont?.pointSize)!*0.8)
-            }), completion: { _ in
-            })
+            }),
+            completion: { _ in })
             self.activeLayer?.frame = CGRect(x: 0, y: self.frame.size.height - 1, width: self.frame.size.width, height: 1)
             self.activeLayer?.backgroundColor = UIColor.red.cgColor
             self.inActiveLayer?.frame = CGRect(x: 0, y: self.frame.size.height - 1, width: 0, height: 1)
@@ -59,14 +56,14 @@ final class LabelTextField : UITextField {
         }
     }
     
-    @objc func endEditing1() {
+    @objc func extfieldDidEndEditing() {
         if text?.isEmpty ?? false {
             UIView.animate(withDuration: 0.35, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: ({
                 self.placeHolderLabel.frame.origin = CGPoint(x: 0, y: 14)
                 self.placeHolderLabel.font = UIFont(name: (self.placeHolderFont?.fontName)!, size: (self.placeHolderFont?.pointSize)!*1.0)
                 self.placeHolderLabel.alpha = 1.0
-            }), completion: { _ in
-            })
+            }),
+            completion: { _ in })
         }
         self.activeLayer?.frame = CGRect(x: 0, y: self.frame.size.height - 1, width: 0, height: 1)
         self.activeLayer?.backgroundColor = UIColor.red.cgColor
@@ -75,12 +72,10 @@ final class LabelTextField : UITextField {
     }
     
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-//        return bounds.offsetBy(dx: textFieldInsets.x, dy: textFieldInsets.y)
         return bounds.offsetBy(dx: 0, dy: 12)
     }
     
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
-//        return bounds.offsetBy(dx: textFieldInsets.x, dy: textFieldInsets.y)
         return bounds.offsetBy(dx: 0, dy: 12)
     }
 }
